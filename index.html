@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <title>算法实现：B-树</title>
+        <link rel="stylesheet" href="./sources/css/main.css" type="text/css">
+    </head>
+    <body>
+        <div id="tree-canvas">
+            <div class="default-text">
+                <h1>算法实现：B-树</h1>
+                <h2>1953080 田宇</h2>
+            </div>
+        </div>
+        <div id="sidebar">
+            <h1>算法实现：B-树</h1>
+            <div id="tools">
+                <h2>控制台</h2>
+                <section id="tools-init">
+                    <div title="B-树的阶数">
+                        B-树的阶数 M:
+                        <input id="input-m" class="small" type="number" min="3" value="3">
+                    </div>
+                    <div title="初始化方式">
+                        <button id="btn-init-empty" class="half" onclick="btnBTInit()">初始化空树</button>
+                        <button id="btn-init-random" class="half" onclick="btnBTInit(true)">随机初始化</button>
+                    </div>
+                </section>
+                <section id="tools-edit">
+                    <div title="操作的关键字">
+                        <input id="input-operand" type="number" placeholder="请输入要操作的键值">
+                    </div>
+                    <div title="查找/添加/删除">
+                        <button id="btn-edit-search" class="tri special" onclick="btnBTSearch()" disabled>查找</button>
+                        <button id="btn-edit-add" class="tri" onclick="btnBTInsert()" disabled>插入</button>
+                        <button id="btn-edit-del" class="tri" onclick="btnBTRemove()" disabled>删除</button>
+                    </div>
+                </section>
+                <section id="tools-show">
+					<div title="展示中序遍历结果">
+						<div class="title">B-树中序遍历结果</div>
+						<textarea id="text-traverse" readonly placeholder="这里将展示B-树中序遍历结果"></textarea>
+					</div>
+					<div title="展示操作记录">
+						<div class="title">操作记录</div>
+						<textarea id="text-operations" readonly placeholder="这里将展示操作序列"></textarea>
+					</div>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <script async src="./sources/js/viz.min.js"></script>
+            <script async src="./sources/js/svg-pan-zoom.min.js"></script>
+            <script defer src="./sources/js/btree.js"></script>
+            <script defer src="./sources/js/main.js"></script>
+        </footer>
+    </body>
+</html>
